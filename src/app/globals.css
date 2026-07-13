@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss/theme" layer(base);
+@import "tailwindcss/utilities";
+
+/* Centering the container across all screen sizes */
+.container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  max-width: 1280px;
+}
+
+:root {
+  --navy: #0B1120;
+  --dark: #0F172A;
+  --indigo: #4F46E5;
+  --cyan: #06B6D4;
+  --emerald: #10B981;
+  --white-soft: #F8FAFC;
+}
+
+/* Keep box-sizing consistent but allow natural browser margins/padding */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--navy);
+  color: #e2e8f0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Global element resets (replacing Tailwind Preflight) ─── */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+img, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Lenis smooth scroll */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+/* Font */
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #4F46E5 0%, #06B6D4 50%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Animated blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: blob-move 12s ease-in-out infinite;
+}
+
+.blob-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.12) 0%, transparent 70%);
+  top: -200px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.blob-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.10) 0%, transparent 70%);
+  top: 30%;
+  right: -100px;
+  animation-delay: -4s;
+}
+
+.blob-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  bottom: -100px;
+  left: 30%;
+  animation-delay: -8s;
+}
+
+@keyframes blob-move {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 30px) scale(0.95); }
+}
+
+/* Infinite marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Spinning loader */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Ping animation */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1120;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4F46E5, #06B6D4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #6366F1, #0891B2);
+}
+
+/* Section scroll margin for fixed navbar */
+#about, #whyus, #services, #courses, #testimonial, #contact, #training_program {
+  scroll-margin-top: 80px;
+}
+
+/* Swiper custom styles */
+.course-swiper .swiper-button-next,
+.course-swiper .swiper-button-prev {
+  color: #4F46E5;
+  background: rgba(79, 70, 229, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(79, 70, 229, 0.3);
+}
+.course-swiper .swiper-button-next::after,
+.course-swiper .swiper-button-prev::after {
+  font-size: 14px;
+  font-weight: 700;
+}
+.course-swiper .swiper-pagination-bullet,
+.testimonial-swiper .swiper-pagination-bullet {
+  background: #4F46E5;
+  opacity: 0.4;
+}
+.course-swiper .swiper-pagination-bullet-active,
+.testimonial-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: linear-gradient(135deg, #4F46E5, #06B6D4);
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* Line clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Responsive fixes for short viewport heights (e.g. 600px - 740px) */
+@media (max-height: 740px) {
+  .hero-scroll-indicator {
+    display: none !important;
+  }
+  .hero-section-container {
+    padding-top: 5.5rem !important; /* pt-22 */
+    padding-bottom: 3rem !important; /* pb-12 */
+  }
+  .hero-3d-canvas {
+    height: 380px !important;
+  }
+  .trust-badge-card {
+    padding: 0.5rem !important;
+  }
+  .trust-badge-value {
+    font-size: 1rem !important;
+  }
+}
+
+/* Section subtitle — always centered regardless of parent alignment */
+.section-subtitle {
+  text-align: center;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure section heading blocks are always centered */
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+

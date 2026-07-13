@@ -1,0 +1,14 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Bar chart -->
+  <rect x="10" y="60" width="18" height="45" rx="3" fill="#7C3AED"/>
+  <rect x="35" y="40" width="18" height="65" rx="3" fill="#8B5CF6"/>
+  <rect x="60" y="20" width="18" height="85" rx="3" fill="#A78BFA"/>
+  <rect x="85" y="35" width="18" height="70" rx="3" fill="#7C3AED"/>
+  <!-- Line chart overlay -->
+  <polyline points="19,60 44,40 69,20 94,35" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Dots -->
+  <circle cx="19" cy="60" r="4" fill="#F59E0B"/>
+  <circle cx="44" cy="40" r="4" fill="#F59E0B"/>
+  <circle cx="69" cy="20" r="4" fill="#F59E0B"/>
+  <circle cx="94" cy="35" r="4" fill="#F59E0B"/>
+</svg>

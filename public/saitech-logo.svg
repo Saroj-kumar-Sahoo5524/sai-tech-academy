@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <!-- Bright metallic hex border -->
+    <linearGradient id="hexBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="35%"  stop-color="#C8E4FF"/>
+      <stop offset="70%"  stop-color="#7AACDC"/>
+      <stop offset="100%" stop-color="#4080B8"/>
+    </linearGradient>
+    <!-- Inner hex fill (light blue-white) -->
+    <linearGradient id="hexFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#D8EFFF"/>
+      <stop offset="100%" stop-color="#A8CCF0"/>
+    </linearGradient>
+    <!-- Globe gradient -->
+    <linearGradient id="globeG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#40B8FF"/>
+      <stop offset="100%" stop-color="#0050C0"/>
+    </linearGradient>
+    <!-- BRIGHT banner - royal blue to electric blue -->
+    <linearGradient id="bannerG" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#0830A0"/>
+      <stop offset="50%"  stop-color="#1848D0"/>
+      <stop offset="100%" stop-color="#0830A0"/>
+    </linearGradient>
+    <!-- Cyan glow filter -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Blue outer glow on hex -->
+    <filter id="hexGlow" x="-15%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#00AAFF" flood-opacity="0.7"/>
+    </filter>
+    <!-- Text shadow for readability -->
+    <filter id="textShadow">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000030" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- === OUTER HEX (metallic, glowing) === -->
+  <polygon
+    points="100,5 185,50 185,150 100,195 15,150 15,50"
+    fill="url(#hexBorder)"
+    filter="url(#hexGlow)"
+  />
+
+  <!-- === INNER HEX (light background) === -->
+  <polygon
+    points="100,17 173,59 173,141 100,183 27,141 27,59"
+    fill="url(#hexFill)"
+  />
+
+  <!-- === GLOBE === -->
+  <circle cx="100" cy="88" r="42" fill="url(#globeG)" opacity="0.22"/>
+  <!-- Latitude lines -->
+  <ellipse cx="100" cy="88" rx="40" ry="40" fill="none" stroke="#1878CC" stroke-width="1.2" opacity="0.55"/>
+  <ellipse cx="100" cy="88" rx="40" ry="18" fill="none" stroke="#1878CC" stroke-width="1.2" opacity="0.55"/>
+  <ellipse cx="100" cy="88" rx="22" ry="40" fill="none" stroke="#1878CC" stroke-width="1.2" opacity="0.55"/>
+  <line x1="60"  y1="88"  x2="140" y2="88"  stroke="#1878CC" stroke-width="1.2" opacity="0.55"/>
+  <line x1="100" y1="48"  x2="100" y2="128" stroke="#1878CC" stroke-width="1.2" opacity="0.55"/>
+  <!-- Globe highlight -->
+  <ellipse cx="87" cy="70" rx="12" ry="8" fill="white" opacity="0.3"/>
+
+  <!-- === NETWORK NODES === -->
+  <circle cx="100" cy="48"  r="4"   fill="#00DDFF" filter="url(#glow)"/>
+  <circle cx="140" cy="64"  r="3"   fill="#00BBEE" filter="url(#glow)"/>
+  <circle cx="148" cy="100" r="3"   fill="#00BBEE" filter="url(#glow)"/>
+  <circle cx="60"  cy="64"  r="3"   fill="#00BBEE" filter="url(#glow)"/>
+  <circle cx="52"  cy="100" r="3"   fill="#00BBEE" filter="url(#glow)"/>
+  <circle cx="100" cy="128" r="4"   fill="#00DDFF" filter="url(#glow)"/>
+  <!-- Connector lines -->
+  <line x1="100" y1="48"  x2="140" y2="64"  stroke="#00CCFF" stroke-width="1.2" opacity="0.65"/>
+  <line x1="100" y1="48"  x2="60"  y2="64"  stroke="#00CCFF" stroke-width="1.2" opacity="0.65"/>
+  <line x1="148" y1="100" x2="100" y2="128" stroke="#00CCFF" stroke-width="1.2" opacity="0.65"/>
+  <line x1="52"  y1="100" x2="100" y2="128" stroke="#00CCFF" stroke-width="1.2" opacity="0.65"/>
+
+  <!-- === BANNER (bigger, brighter) === -->
+  <!-- Banner body -->
+  <rect x="27" y="128" width="146" height="40" rx="4" fill="url(#bannerG)"/>
+  <!-- Banner side wings (pointed) -->
+  <polygon points="27,128 40,128 40,168 27,168 17,148" fill="#051880"/>
+  <polygon points="173,128 160,128 160,168 173,168 183,148" fill="#051880"/>
+  <!-- Banner top highlight strip -->
+  <rect x="27" y="128" width="146" height="4" rx="2" fill="white" opacity="0.12"/>
+  <!-- Banner border lines -->
+  <line x1="27" y1="128" x2="173" y2="128" stroke="#5090FF" stroke-width="0.8" opacity="0.6"/>
+  <line x1="27" y1="168" x2="173" y2="168" stroke="#5090FF" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- === TEXT (BIG & BOLD — legible at 100px render) === -->
+  <!-- "SAI TECH" main text -->
+  <text
+    x="100" y="153"
+    text-anchor="middle"
+    font-family="Arial Black, Arial, sans-serif"
+    font-weight="900"
+    font-size="26"
+    letter-spacing="1"
+    fill="white"
+    filter="url(#textShadow)"
+  >SAI TECH</text>
+
+  <!-- "SOLUTION" sub text -->
+  <text
+    x="100" y="165"
+    text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-weight="700"
+    font-size="10"
+    letter-spacing="5"
+    fill="#90D8FF"
+    filter="url(#textShadow)"
+  >SOLUTION</text>
+
+  <!-- Horizontal cyan ray lines on sides -->
+  <rect x="0"   y="147" width="15" height="2" rx="1" fill="#00CCFF" opacity="0.8"/>
+  <rect x="185" y="147" width="15" height="2" rx="1" fill="#00CCFF" opacity="0.8"/>
+</svg>

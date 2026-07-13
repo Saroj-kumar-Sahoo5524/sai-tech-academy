@@ -1,0 +1,20 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140">
+  <defs>
+    <clipPath id="leftClip"><rect x="0" y="0" width="120" height="140"/></clipPath>
+    <clipPath id="rightClip"><rect x="120" y="0" width="120" height="140"/></clipPath>
+  </defs>
+  <!-- Left lemniscate half (dark navy) -->
+  <path d="M120,70 C105,40 75,20 50,30 C25,40 20,75 40,90 C60,105 95,90 120,70Z" fill="#1B2B4B" clip-path="url(#leftClip)"/>
+  <!-- Right lemniscate half (green) -->
+  <path d="M120,70 C135,40 165,20 190,30 C215,40 220,75 200,90 C180,105 145,90 120,70Z" fill="#00C853" clip-path="url(#rightClip)"/>
+  <!-- Stroke around entire lemniscate -->
+  <path d="M120,70 C105,40 75,20 50,30 C25,40 20,75 40,90 C60,105 95,90 120,70 C135,40 165,20 190,30 C215,40 220,75 200,90 C180,105 145,90 120,70Z" fill="none" stroke="#e0e0e0" stroke-width="3"/>
+  <!-- Arrows on left loop -->
+  <polygon points="68,30 60,22 80,20" fill="#1B2B4B"/>
+  <!-- Arrows on right loop -->
+  <polygon points="172,110 180,118 160,120" fill="#00C853"/>
+  <!-- Dev text -->
+  <text x="72" y="76" font-family="Arial Black, sans-serif" font-weight="900" font-size="18" fill="white" text-anchor="middle">Dev</text>
+  <!-- Ops text -->
+  <text x="168" y="76" font-family="Arial Black, sans-serif" font-weight="900" font-size="18" fill="white" text-anchor="middle">Ops</text>
+</svg>
