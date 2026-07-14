@@ -32,6 +32,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/saitech-logo.png",
+    shortcut: "/saitech-logo.png",
+    apple: "/saitech-logo.png",
+  },
 };
 
 export default function RootLayout({
