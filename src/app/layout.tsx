@@ -33,9 +33,12 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/saitech-logo.png",
+    icon: [
+      { url: "/saitech-logo.png", sizes: "64x64", type: "image/png" },
+      { url: "/saitech-logo.png", sizes: "128x128", type: "image/png" },
+    ],
     shortcut: "/saitech-logo.png",
-    apple: "/saitech-logo.png",
+    apple: { url: "/saitech-logo.png", sizes: "180x180", type: "image/png" },
   },
 };
 
