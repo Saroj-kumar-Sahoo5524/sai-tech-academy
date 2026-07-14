@@ -6,6 +6,7 @@ import LenisProvider from "@/components/providers/LenisProvider";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://saitechacademy.com"),
   title: "Sai Tech Academy — Premier IT Training Institute in Odisha",
   description:
     "Sai Tech Academy offers industry-leading IT training in Java, Python, DevOps, AWS, Data Science, and more. 2000+ students trained, 95% placement rate, expert instructors. Located in Bhubaneswar, Odisha.",
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
     title: "Sai Tech Academy — Premier IT Training Institute",
     description: "Transform your IT career with expert-led training. 2000+ students, 95% placement rate.",
     type: "website",
+    url: "https://saitechacademy.com",
     locale: "en_IN",
     siteName: "Sai Tech Academy",
   },
