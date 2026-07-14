@@ -29,7 +29,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/saitech-logo.svg"
+                src="/saitech-logo.png"
                 alt="Sai Tech Solution"
                 width={52}
                 height={52}
@@ -42,7 +42,7 @@ export default function Footer() {
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-5">
               Transforming IT aspirations into achievements. Premier training institute
-              in Odisha with 10+ years of excellence.
+               with 4+ years of excellence.
             </p>
             {/* Social links */}
             <div className="flex gap-3">
@@ -109,7 +109,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm text-slate-400">
                 <span className="text-indigo-400 flex-shrink-0 mt-0.5">📍</span>
-                <span>Jaydev Vihar, BBSR, Odisha, INDIA</span>
+                <span>Opening soon, Bhubaneswar, Odisha, INDIA</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-slate-400">
                 <span className="text-indigo-400 flex-shrink-0">✉️</span>
@@ -120,12 +120,12 @@ export default function Footer() {
               <li className="flex items-start gap-3 text-sm text-slate-400">
                 <span className="text-indigo-400 flex-shrink-0">📞</span>
                 <a href="tel:+919861257949" className="hover:text-indigo-300 transition-colors">
-                  +91-9861257949
+                  +91-9148531106
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-slate-400">
                 <span className="text-indigo-400 flex-shrink-0">🕐</span>
-                <span>Mon - Sun: 10 AM – 7 PM</span>
+                <span>Mon - Sat: 10 AM – 7 PM</span>
               </li>
             </ul>
           </div>
@@ -134,7 +134,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">
-            © 2025 Sai Tech Academy. All rights reserved. Made with ❤️ by Team Rupesh.
+            © 2026 Sai Tech Academy. All rights reserved. Made with ❤️ by Team Sai Tech Academy.
           </p>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />

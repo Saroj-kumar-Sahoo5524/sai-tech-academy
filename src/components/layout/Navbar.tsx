@@ -50,22 +50,28 @@ export default function Navbar() {
       }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-28 py-1">
+        <div className="flex items-center justify-between h-28 py-0">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/saitech-logo.svg"
-              alt="Sai Tech Solution"
-              width={100}
-              height={100}
-              className="w-[100px] h-[100px] object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_12px_rgba(0,180,255,0.6)]"
-            />
-            <div>
-              <div className="text-white font-bold text-base leading-tight font-outfit">Sai Tech Academy</div>
-              <div className="text-slate-400 text-[10px] italic">Experience IT with us</div>
-            </div>
-          </Link>
+          <Link
+  href="/"
+  className="flex items-center group"
+>
+  <img
+    src="/saitech-logo.png"
+    alt="Sai Tech Academy"
+    className="w-20 h-20 object-contain flex-shrink-0"
+  />
+
+  <div className="-ml-1 flex flex-col justify-center">
+    <h1 className="text-white text-2xl font-bold leading-tight font-outfit">
+      Sai Tech Academy
+    </h1>
+
+    <p className="text-slate-400 text-sm italic leading-tight">
+      Experience IT with us
+    </p>
+  </div>
+</Link>
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-6">
