@@ -189,7 +189,7 @@ export default function HeroSection() {
               className="text-slate-400 text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
             >
               Sai Tech Academy provides industry-ready IT training with expert mentors, live projects,
-              small batches, and 100% Job Ready Pogram. Transform your future today.
+              small batches, and 100% Job Ready Program. Transform your future today.
             </motion.p>
 
             {/* CTA Buttons */}

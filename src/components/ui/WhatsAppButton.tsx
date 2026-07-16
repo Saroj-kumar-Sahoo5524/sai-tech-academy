@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "919337427185"; // Replace with actual number
+const WHATSAPP_NUMBER = "919148531106"; // Replace with actual number
 const WHATSAPP_MESSAGE = "Hi! I'm interested in learning more about Sai Tech Academy courses.";
 
 export default function WhatsAppButton() {

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Sai Tech Academy" }],
   openGraph: {
     title: "Sai Tech Academy — Premier IT Training Institute",
-    description: "Transform your IT career with expert-led training. 2000+ students, 95% placement rate.",
+    description: "Transform your IT career with expert-led training. Decades of Excellence in IT Training.Students placed in top MNC companies.",
     type: "website",
     url: "https://saitechacademy.com",
     locale: "en_IN",

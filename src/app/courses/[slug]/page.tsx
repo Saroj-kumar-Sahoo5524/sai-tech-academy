@@ -200,7 +200,7 @@ export default async function CourseDetailPage({ params }: Props) {
             <div className="glass-card rounded-3xl p-6 border border-white/5 space-y-3">
               <h3 className="text-lg font-bold text-white font-outfit">Have Questions?</h3>
               <a href="tel:+919861257949" className="flex items-center gap-3 text-slate-300 hover:text-white text-sm transition-colors">
-                <span className="text-indigo-400">📞</span> +91-9861257949
+                <span className="text-indigo-400">📞</span> +91-9148531106
               </a>
               <a href="mailto:info@saitechacademy.com" className="flex items-center gap-3 text-slate-300 hover:text-white text-sm transition-colors">
                 <span className="text-indigo-400">✉️</span> info@saitechacademy.com
