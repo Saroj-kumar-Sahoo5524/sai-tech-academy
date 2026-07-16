@@ -21,9 +21,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ status: "error", message: "Message must be 2–500 characters." }, { status: 400 });
     }
 
-    const timestamp = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
-
-    await appendToSheet([timestamp, name, email, phone, course || "General Enquiry", message]);
+    await appendToSheet([name, email, phone, course || "General Enquiry", message]);
 
     return NextResponse.json({
       status: "success",

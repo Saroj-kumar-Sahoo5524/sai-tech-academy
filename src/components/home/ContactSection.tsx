@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle2, XCircle } from "lucide-react";
 
 const contactInfo = [
   {
@@ -55,6 +56,16 @@ export default function ContactSection() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [statusMsg, setStatusMsg] = useState("");
 
+  useEffect(() => {
+    if (status === "success" || status === "error") {
+      const timer = setTimeout(() => {
+        setStatus("idle");
+        setStatusMsg("");
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
+
   function validate(): boolean {
     const errs: FormErrors = {};
     if (form.name.trim().length < 2 || form.name.trim().length > 50) errs.name = "Name must be 2–50 characters.";
@@ -70,19 +81,25 @@ export default function ContactSection() {
     if (!validate()) return;
     setStatus("loading");
     try {
-      const res = await fetch("/api/contact", {
+      const formData = new FormData();
+      formData.append("name", form.name);
+      formData.append("email", form.email);
+      formData.append("phone", form.phone);
+      formData.append("course", form.course);
+      formData.append("message", form.message);
+
+      const res = await fetch("https://script.google.com/macros/s/AKfycbxjIOXQjYK_SvVZD3XyX5DshC-GQgo0gsM-ZSPm2KatTCVy0QzdYaoDhhWunu1VHxSCYQ/exec", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: formData,
       });
       const data = await res.json();
       if (data.status === "success") {
         setStatus("success");
-        setStatusMsg(data.message);
+        setStatusMsg("✅ Thank you! Your message has been received.");
         setForm({ name: "", email: "", phone: "", course: "", message: "" });
       } else {
         setStatus("error");
-        setStatusMsg(data.message || "Something went wrong.");
+        setStatusMsg("Something went wrong.");
       }
     } catch {
       setStatus("error");
@@ -165,17 +182,6 @@ export default function ContactSection() {
         >
           <div className="glass-card rounded-3xl p-5 sm:p-10 border border-white/5">
             <h3 className="text-2xl font-bold text-white font-outfit mb-6">Send Us a Message</h3>
-
-            {status === "success" && (
-              <div className="mb-6 p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-sm">
-                {statusMsg}
-              </div>
-            )}
-            {status === "error" && (
-              <div className="mb-6 p-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-300 text-sm">
-                {statusMsg}
-              </div>
-            )}
 
             <form onSubmit={handleSubmit} noValidate className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -279,6 +285,30 @@ export default function ContactSection() {
           </div>
         </motion.div>
       </div>
+
+      {/* Floating Toast Notification */}
+      <AnimatePresence>
+        {(status === "success" || status === "error") && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 50, scale: 0.9 }}
+            className={`fixed bottom-8 right-8 z-[100] flex items-center gap-4 px-6 py-4 rounded-2xl shadow-2xl backdrop-blur-xl border ${
+              status === "success"
+                ? "bg-emerald-950/80 border-emerald-500/50 text-emerald-300 shadow-emerald-500/20"
+                : "bg-red-950/80 border-red-500/50 text-red-300 shadow-red-500/20"
+            }`}
+          >
+            <div className={`p-2 rounded-full ${status === "success" ? "bg-emerald-500/20 text-emerald-400" : "bg-red-500/20 text-red-400"}`}>
+              {status === "success" ? <CheckCircle2 className="w-6 h-6" /> : <XCircle className="w-6 h-6" />}
+            </div>
+            <div>
+              <h4 className="font-semibold text-white">{status === "success" ? "Message Sent!" : "Oops!"}</h4>
+              <p className="text-sm opacity-90">{statusMsg}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
