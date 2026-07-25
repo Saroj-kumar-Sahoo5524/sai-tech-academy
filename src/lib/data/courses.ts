@@ -28,7 +28,7 @@ export const courses: Course[] = [
     id: "java",
     slug: "java",
     title: "Enterprise Java Developer Program",
-    shortTitle: "Java Full Stack",
+    shortTitle: "Java Full Stack+AI",
     description: "Dive into Java with this comprehensive course covering Core Java, Spring Boot, Microservices, Hibernate, REST APIs and more.",
     longDescription: "Master Java from the ground up with real-world projects. This comprehensive program covers Core Java, OOPs, Collections, Spring Boot, Spring MVC, Hibernate/JPA, Microservices, REST APIs, and deployment. Learn industry-grade patterns used at top companies.",
     duration: "6 Months",
@@ -41,7 +41,7 @@ export const courses: Course[] = [
     badge: "Most Popular",
     icon: "☕",
     logo: "/course-logos/java.svg",
-    syllabus: "/syllabus/java-syllabus.pdf",
+    syllabus: "/syllabus/Java-Full-Stack+AI-Syllabus-STA.pdf",
     color: "#F89820",
     gradient: "from-amber-500 to-orange-600",
     modules: [
@@ -82,7 +82,7 @@ export const courses: Course[] = [
     badge: "Hot",
     icon: "🐍",
     logo: "/course-logos/python.svg",
-    syllabus: "/syllabus/python-syllabus.pdf",
+    syllabus: "/syllabus/Python-Full-Stack+AI-Syllabus-STA.pdf",
     color: "#3776AB",
     gradient: "from-blue-500 to-cyan-600",
     modules: [
@@ -123,7 +123,7 @@ export const courses: Course[] = [
     badge: "Trending",
     icon: "⚙️",
     logo: "/course-logos/devops.svg",
-    syllabus: "/syllabus/devops-syllabus.pdf",
+    syllabus: "/syllabus/AWS-DevOps-Syllabus-STA.pdf",
     color: "#0078D4",
     gradient: "from-indigo-500 to-blue-600",
     modules: [
@@ -164,7 +164,7 @@ export const courses: Course[] = [
     originalPrice: "₹25,000",
     icon: "☁️",
     logo: "/course-logos/aws.svg",
-    syllabus: "/syllabus/aws-syllabus.pdf",
+    syllabus: "/syllabus/AWS-Cloud-Syllabus-STA.pdf",
     color: "#FF9900",
     gradient: "from-orange-400 to-yellow-500",
     modules: [
